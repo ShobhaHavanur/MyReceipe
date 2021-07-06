@@ -6,3 +6,7 @@ body{
     border-left: 5px;
     
 }
+#receipeMenu{
+    border: solid black;
+    margin: 5px;
+}

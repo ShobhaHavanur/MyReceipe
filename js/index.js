@@ -12,6 +12,7 @@ let riceCol = document.querySelector('#riceCol');
 let dessertsCol = document.querySelector('#dessertsCol');
 let selectFood = document.querySelector('#selectFood');
 let receipeDelete = document.querySelector('#justForDisp');
+let errorMsg = document.querySelector('#errorMsg');
 
 receipeMenu.style.visibility = "visible";
 detailsDiv.style.visibility = "hidden";
@@ -19,28 +20,32 @@ let receipeManager = new ReceipeManager(0);
 receipeManager.load();
 receipeManager.render();
 
-function validate() {
-    
-}
-function nameValidate() {
-    
-}
-
-function display() {
-    console.log("In display function");
+function submit() {
+   
    detailsDiv.style.visibility = "visible";
-   console.log(selectFood.value);
-   validate();
-   receipeManager.addTask(selectFood.value,repName.value,ingredientName.value,timeReq.value,steps.value);
+   //console.log(selectFood.value);
+
+  if(repName.value != 0 && ingredientName.value != 0) 
+   {
+    errorMsg.innerHTML = ""  ;
+    receipeManager.addTask(selectFood.value,repName.value,ingredientName.value,timeReq.value,steps.value);
    receipeManager.save();
    receipeManager.getTaskById(0);
    receipeManager.render();  
    reset(); 
+   } else if(repName.value == 0) {
+        errorMsg.innerHTML = "Name field cannot be empty";
+        errorMsg.style.color = "red";
+    } else if(ingredientName.value == 0) {
+        errorMsg.innerHTML = "Please specify ingredients";
+        errorMsg.style.color = "red";
+    } 
 }
 
-function submit() {
+function display() {
    // receipeManager.render();
-    detailsDiv.style.visibility = "hidden";
+   errorMsg.innerHTML = "";
+    detailsDiv.style.visibility = "visible";
 }
 function cancel() {
     detailsDiv.style.visibility = "hidden";
