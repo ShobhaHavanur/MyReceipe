@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="./css/styles.css" rel="stylesheet"/>
+  </head>
+  <body>
+    <h1 class="text-center mx-3 my-4"><u>My Receipes World</u></h1>
+
+    <!-- Grid starts which displays Receipes -->
+    <div class="container border border-primary border-3" id="receipeMenu">
+        <div class="row border-3">
+          <div class="col " id="saladsCol">
+            SALADS
+          </div>
+          <div class="col" id="riceCol">
+            RICE VARIETIES
+          </div>
+          <div class="col" id="dessertsCol">
+            DESSERTS
+          </div>
+        </div>
+      </div>
+    <!-- Grid ends  -->
+      <h4 class="text-center">Do You Wish To Add A New Receipe
+      <!-- Add button to ADD new dishes starts -->
+      <button type="button" class="btn btn-success mx-3 my-3" id="addButton">Add Receipe</button>
+      <!-- Button Add ends -->
+    </h4>
+    <!-- Adding Receipe details starts here-->
+        <div class="addingDetails mx-3 my-3" id="detailsDiv">
+             <label for="Receipe for"> Receipe for:</label><br>
+              <span id="assignedError"></span>
+              <select class="form-select form-select-sm" id="selectFood">
+                <option value="salads">SALADS</option>
+                <option value="rice">Rice VARIETIES</option>
+                <option value="desserts">DESSERTS</option>
+            </select><br>
+          <h4>Receipe Name : 
+          <input type="text" class="receipeName" id="repName"  required /></h4>
+          <label for="floatingInputValue">Ingredients : </label>  
+          <input type="floatingInputValue" class="ingredients mx-3" id="ingredientName" required />
+          <br><br>
+          <label for="time">Process Time : </label>  
+          <input type="number" class="timeTaken mx-3" id="timeReq" required />
+          <br><br>
+          <label for="floatingInputValue">Process Steps : </label>  
+          <textarea class="form-control stepsToDo" id="steps" aria-label="With textarea" placeholder="Cooking Process" required></textarea> 
+          <button type="button" class="btn btn-primary" id="submitButton">Submit</button>
+          <button type="button" class="btn btn-secondary" id="cancelButton">Cancel</button>  
+        </div>
+    <!-- Adding receipe details ends here -->
+    <!-- div to display added receipes -->
+        <div class="tempDisp" id="justForDisp"> 
+
+        </div>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="./js/taskManager.js"></script>
+    <script src="./js/index.js"></script>
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
