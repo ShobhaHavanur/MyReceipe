@@ -7,3 +7,7 @@ HTML 5
 CSS
 Java Script
 BootStrap
+
+Functionalities : Add receipe
+                  Delete Receipe
+                  Display from Local Storage
